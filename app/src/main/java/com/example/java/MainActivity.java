@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Spinner spinnerCategoria = findViewById(R.id.spinnerCategoria);
-        TextView textViewCategoria = findViewById(R.id.textViewCategoria);
 
         String[] categorias = {
                 "Seleccione una opción",
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 if (position == 0) {
                     return;
                 } else {
-                    String selectedCategoria = parent.getItemAtPosition(position).toString();
+                    return;
                 }
             }
 
