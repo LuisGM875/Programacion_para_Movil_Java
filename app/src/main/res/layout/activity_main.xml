@@ -75,7 +75,7 @@
         android:height="80dp"
         android:ems="10"
         android:fontFamily="sans-serif"
-        android:inputType="text"
+        android:inputType="text|textMultiLine"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,19 +95,16 @@
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="239dp"
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:max="@integer/material_motion_duration_medium_2"
-        android:progress="@integer/material_motion_duration_short_1"
+        android:progressTint="#FFE702"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
