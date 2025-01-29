@@ -37,17 +37,14 @@ public class MainActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the text from the EditText fields
                 String name = nameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
 
-                // Validate the email
                 if (!isValidEmail(email)) {
                     Toast.makeText(MainActivity.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
-                    return; // Stop further execution if the email is invalid
+                    return;
                 }
 
-                // Check which radio button is selected
                 String attendance = "";
                 if (radioSi.isChecked()) {
                     attendance = "Sí";
@@ -75,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Email validation method
     private boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
