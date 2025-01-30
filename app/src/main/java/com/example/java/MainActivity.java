@@ -48,28 +48,26 @@ public class MainActivity extends AppCompatActivity {
                 String cvv = cvvEditText.getText().toString();
 
                 if (cardNumber.isEmpty() || expirationDate.isEmpty() || cvv.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (!isValidCardNumber(cardNumber)) {
-                    Toast.makeText(MainActivity.this, "Please enter a valid 12-digit card number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Por favor ingresa un número de tarjeta válido de 12 dígitos", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (!isValidExpirationDate(expirationDate)) {
-                    Toast.makeText(MainActivity.this, "Please enter a valid expiration date in MM/YY format", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Por favor ingresa una fecha de expiración válida en el formato MM/YY", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (!isValidCvv(cvv)) {
-                    Toast.makeText(MainActivity.this, "Please enter a valid 3-digit CVV", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Por favor ingresa un CVV válido de 3 dígitos", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                // Do something with the data (e.g., process payment, etc.)
-                // For now, let's just show a Toast message
-                Toast.makeText(MainActivity.this, "Card Number: " + cardNumber + ", Expiration Date: " + expirationDate + ", CVV: " + cvv, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Número de Tarjeta: " + cardNumber + ", Fecha de Expiración: " + expirationDate + ", CVV: " + cvv, Toast.LENGTH_LONG).show();
             }
         });
     }
