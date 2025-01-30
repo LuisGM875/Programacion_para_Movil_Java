@@ -32,26 +32,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Find the views by their IDs
         EditText cardNumberEditText = findViewById(R.id.editTextText2);
         EditText expirationDateEditText = findViewById(R.id.editTextText3);
         EditText cvvEditText = findViewById(R.id.editTextTextPassword);
         Button payButton = findViewById(R.id.button);
 
-        // Set input filters
         cardNumberEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(12)});
         cvvEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
 
-        // Set a click listener for the pay button
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the text from the EditText fields
                 String cardNumber = cardNumberEditText.getText().toString();
                 String expirationDate = expirationDateEditText.getText().toString();
                 String cvv = cvvEditText.getText().toString();
 
-                // Validate the fields
                 if (cardNumber.isEmpty() || expirationDate.isEmpty() || cvv.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                     return;
@@ -79,12 +74,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Card number validation method
     private boolean isValidCardNumber(String cardNumber) {
         return cardNumber.length() == 12 && TextUtils.isDigitsOnly(cardNumber);
     }
 
-    // Expiration date validation method (MM/YY format)
     private boolean isValidExpirationDate(String expirationDate) {
         if (expirationDate.length() != 5 || expirationDate.charAt(2) != '/') {
             return false;
@@ -107,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // CVV validation method
     private boolean isValidCvv(String cvv) {
         return cvv.length() == 3 && TextUtils.isDigitsOnly(cvv);
     }
